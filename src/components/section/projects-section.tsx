@@ -1,8 +1,5 @@
-import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { DATA } from "@/data/resume";
-
-const BLUR_FADE_DELAY = 0.04;
 
 export default function ProjectsSection() {
     return (
@@ -23,24 +20,20 @@ export default function ProjectsSection() {
                         />
                     </div>
                     <div className="flex flex-col gap-y-3 items-center justify-center">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Check out my latest work</h2>
+                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Selected projects</h2>
                         <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-                            I&apos;ve worked on a variety of projects, from simple
-                            websites to complex web applications. Here are a few of my
-                            favorites.
+                            Work across route finding, networking, data analysis, and web development.
                         </p>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto auto-rows-fr">
-                    {DATA.projects.map((project, id) => (
-                        <BlurFade
+                    {DATA.projects.map((project) => (
+                        <div
                             key={project.title}
-                            delay={BLUR_FADE_DELAY * 12 + id * 0.05}
                             className="h-full"
                         >
                             <ProjectCard
                                 href={project.href}
-                                key={project.title}
                                 title={project.title}
                                 description={project.description}
                                 dates={project.dates}
@@ -49,7 +42,7 @@ export default function ProjectsSection() {
                                 video={project.video}
                                 links={project.links}
                             />
-                        </BlurFade>
+                        </div>
                     ))}
                 </div>
             </div>

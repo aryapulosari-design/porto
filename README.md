@@ -1,47 +1,54 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# Portofolio Arya Kharisudin Irfani
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+Portofolio pribadi Arya, mahasiswa Teknik Informatika UIN Maulana Malik Ibrahim Malang yang berfokus pada Blue Team, Linux, dan Python. Proyek ini masih dikembangkan **bertahap**; [PRD dan catatan keputusan](./docs/PRD.md) menjadi acuan sebelum mengerjakan bagian berikutnya.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+## Yang sudah ada
 
-# Features
+- Halaman utama berisi perkenalan, About, pendidikan dan pengalaman dalam timeline dua kolom, keahlian, proyek, sertifikat, dan kontak LinkedIn.
+- Navbar responsif berbentuk dock transparan dengan pill aktif, menu ponsel, serta efek hilang saat scroll turun dan muncul saat scroll naik.
+- Foto Arya tampil dalam bingkai yang bergerak mengikuti scroll dan sedikit merespons pointer pada desktop; gerak dikurangi sesuai pengaturan sistem.
+- Empat proyek awal dari PRD ditampilkan tanpa tautan demo atau gambar yang belum tersedia.
+- Blog contoh dari template dialihkan ke beranda sampai ada tulisan Arya sendiri.
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## Jalankan secara lokal
 
-# Getting Started Locally
+Butuh **Node.js 20.9 atau lebih baru** dan npm. Buka terminal di folder `C:\File Arya\porto gwww\portfolio`, lalu jalankan:
 
-1. Clone this repository to your local machine:
+```bash
+npm install --no-package-lock
+npm run dev
+```
 
-   ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
+Buka alamat **Local** yang muncul di terminal, biasanya [http://localhost:3000](http://localhost:3000). Untuk memeriksa build produksi:
 
-2. Move to the cloned directory
+```bash
+npm run build
+```
 
-   ```bash
-   cd portfolio
-   ```
+## Tempat mengubah konten
 
-3. Install dependencies:
+| Keperluan | Berkas |
+| --- | --- |
+| Nama, bio, pendidikan, pengalaman, keahlian, proyek, kontak | [`src/data/resume.tsx`](./src/data/resume.tsx) |
+| Timeline pendidikan dan pengalaman | [`src/components/section/journey-section.tsx`](./src/components/section/journey-section.tsx) |
+| Kartu sertifikat | [`src/components/section/certificates-section.tsx`](./src/components/section/certificates-section.tsx) |
+| Gerak foto profil | [`src/components/scroll-portrait.tsx`](./src/components/scroll-portrait.tsx) |
+| Susunan halaman utama | [`src/app/page.tsx`](./src/app/page.tsx) |
+| Navbar | [`src/components/navbar.tsx`](./src/components/navbar.tsx) |
+| Warna dan gaya dasar | [`src/app/globals.css`](./src/app/globals.css) |
+| PRD, sumber data, keputusan, dan pekerjaan berikutnya | [`docs/PRD.md`](./docs/PRD.md) |
+| Daftar referensi desain dan screenshot lokal | [`Reverensi/README.md`](./Reverensi/README.md) |
 
-   ```bash
-   pnpm install
-   ```
+## Referensi desain
 
-4. Start the local Server:
+Sumber dan kegunaan setiap rujukan dicatat di [folder Reverensi](./Reverensi/README.md). Saat ini, [Eka Wahyu](https://ekawahyu-portofolio.vercel.app/) menjadi acuan warna dan timeline pengalaman; [Nim](https://github.com/ibelick/nim) menjadi acuan tipografi dan ruang; [dleer-portfolio](https://github.com/dleerdefi/dleer-portfolio) menjadi acuan detail Linux untuk tahap berikutnya. Fondasi kode berasal dari [Magic UI Portfolio](https://github.com/magicuidesign/portfolio). Rujukan ini adalah inspirasi desain, bukan sumber klaim tentang Arya.
 
-   ```bash
-   pnpm dev
-   ```
+Sebelum rilis, isi `NEXT_PUBLIC_SITE_URL` dengan domain publik yang benar di `.env.local` atau pengaturan hosting. Tanpa itu, metadata memakai `http://localhost:3000` untuk preview lokal.
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+## Data yang masih diperlukan
 
-# License
+Email publik, CV publik, serta bukti visual/tautan untuk empat proyek lama masih menunggu verifikasi. Peran Lead Ethernet-0 ditambahkan berdasarkan rincian yang diberikan Arya; GitHub publiknya sudah tertaut di Contact. Tiga judul sertifikat ditampilkan berdasarkan profil LinkedIn publik, tetapi tautan kredensial masing-masing dan gambar sertifikat belum tersedia. Jangan menambahkan klaim atau tautan contoh sebagai data Arya. Layar HP yang lebih kecil serta navigasi keyboard masih perlu diperiksa sebelum rilis.
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+## Asal kode dan lisensi
+
+Fondasi proyek berasal dari [Magic UI Portfolio](https://github.com/magicuidesign/portfolio) karya Dillion Verma dan dimodifikasi untuk Arya. Hak cipta dan syarat MIT milik template tetap tercantum dalam [LICENSE](./LICENSE).
