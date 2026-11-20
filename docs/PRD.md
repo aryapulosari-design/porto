@@ -1,9 +1,16 @@
 # PRD — Portofolio Arya Kharisudin Irfani
 
 **Versi:** 1.0, draft kerja  
-**Status:** Navbar, foto interaktif, timeline pengalaman, dan sertifikat awal sudah diimplementasikan; review visual masih diperlukan  
+**Status:** MVP satu halaman sudah diimplementasikan; review Hero dan pemeriksaan akhir sebelum rilis masih diperlukan
 **Konsep:** Modern editorial gelap dengan aksen biru; Linux menjadi bagian identitas konten  
 **Fondasi:** proyek Next.js di folder `portfolio`
+
+## Mulai dari sini saat melanjutkan
+
+- Implementasi situs pertama ada pada commit `99bbf80` di branch [`portfolio-nextjs`](https://github.com/aryapulosari-design/porto/tree/portfolio-nextjs). Branch `main` repo `porto` berisi proyek lama dengan riwayat berbeda; jangan memaksa push ke `main` tanpa keputusan Arya. Remote lokal `origin` masih menunjuk ke template `magicuidesign/portfolio`, jadi gunakan URL repo Arya saat push.
+- Prioritas berikutnya adalah melihat Hero setelah pembesaran foto terakhir: cek crop foto dan posisi teks kanan pada desktop, lalu lebar 320 px, navigasi keyboard, dan gerak scroll. Mintalah masukan Arya sebelum revisi visual atau pindah ke bagian lain.
+- `npm run lint` terakhir selesai tanpa error (5 peringatan pada berkas blog dan hasil generate). `git diff --check` bersih selain peringatan LF/CRLF. `npm run build` terakhir **belum berhasil di lingkungan ini**: Turbopack gagal memproses `next/font/google`; percobaan `--webpack` gagal mengambil Geist dan Geist Mono dari Google (`EACCES`). Ulangi build saat akses font tersedia sebelum rilis.
+- Konten yang belum lengkap: email/CV publik, tautan dan bukti proyek, serta tautan kredensial dan gambar sertifikat. Berkas referensi dan foto mentah lokal tidak ikut commit; aset yang dipakai situs sudah ada di `public/`.
 
 ## Tujuan
 
@@ -104,7 +111,7 @@ Ide gerak diambil dari [portofolio Rafi](https://github.com/rahmatrafii/portofol
 ## Riwayat implementasi 19 November 2026
 
 - Foto Arya tampil dalam bingkai pada alur Hero–About. Di desktop, posisi bingkai mengikuti scroll dan sedikit merespons pointer; pada perangkat sentuh dan saat reduced motion, tata letak tetap terbaca tanpa efek tersebut.
-- Pendidikan dan pengalaman ditata berdampingan mengikuti [screenshot Eka Wahyu](../Reference/Eka%20Wahyu/pengalaman.png): jalur bernomor, identitas, peran, dan tanggal. Pada layar sempit keduanya bertumpuk. Data yang tampil saat ini hanya UIN Malang dan HMPS Encoder; entri lain menunggu bukti.
+- Pendidikan dan pengalaman ditata berdampingan mengikuti screenshot lokal `Reference/Eka Wahyu/pengalaman.png` (tidak ikut repo): jalur bernomor, identitas, peran, dan tanggal. Pada layar sempit keduanya bertumpuk. Data yang tampil saat ini hanya UIN Malang dan HMPS Encoder; entri lain menunggu bukti.
 - Tiga sertifikat yang judul, penerbit, dan tanggalnya terlihat di [LinkedIn publik Arya](https://id.linkedin.com/in/arya-kharisudin-irfani-055311328) tampil sebagai kartu. Bentuk folder terinspirasi kartu proyek [Rafi](https://github.com/rahmatrafii/portofolio); repo Rafi tidak memiliki section sertifikat khusus.
 - Akun [aryapulosari-design](https://github.com/aryapulosari-design) dan repo `porto` ditinjau sebagai referensi desain dan proyek, bukan bukti sertifikat independen.
 - Build produksi dan lint berhasil. Timeline sudah terlihat rapi di browser lebar sekitar 1535 px dan jendela sempit sekitar 529 px. Layar 320 px, navigasi keyboard, crop foto, dan kelancaran gerak scroll masih perlu ditinjau sebelum menganggap tahap ini final.
@@ -114,16 +121,16 @@ Ide gerak diambil dari [portofolio Rafi](https://github.com/rahmatrafii/portofol
 - Arya memberikan rincian peran **Lead, Ethernet-0 Community, mulai Oktober 2026** dan menjelaskan bahwa Ethernet-0 adalah komunitas cybersecurity di UIN Maulana Malik Ibrahim Malang. Entri ini ditambahkan di atas HMPS pada timeline. Profil LinkedIn publik yang terindeks pencarian masih versi lama, jadi rincian peran baru bersumber dari keterangan langsung pemilik.
 - [Profil GitHub Arya](https://github.com/aryapulosari-design/aryapulosari-design) menyajikan katalog proyek. Repo [CTF-ETH](https://github.com/aryapulosari-design/CTF-ETH) menunjukkan platform CTF kelas berbasis Laravel; [UIN-CSIRT Ticketing](https://github.com/aryapulosari-design/Sistem-Informasi-Tiket-Cyber-Sec) menunjukkan sistem tiket insiden dengan mode demo dan pembagian kontribusi tim; [LangitKita](https://github.com/aryapulosari-design/UTS-Mobile-Praktikum) menunjukkan aplikasi cuaca Flutter. Ketiganya kandidat kuat untuk kurasi Projects berikutnya, tetapi klaim hasil dan demo publik belum diuji pada tahap ini.
 - Akun GitHub publik telah ditautkan pada Contact. Empat kartu proyek lama dari PRD belum diganti agar kurasi proyek tetap menjadi tahap tersendiri.
-- Setelah Arya mengirim [`nafbar contoh.png`](../nafbar%20contoh.png), navbar diubah menjadi dock transparan di tengah dengan badge AK, enam tujuan navigasi, pill biru untuk section aktif, serta menu ponsel bernomor yang dapat ditutup dengan Escape. Sesuai revisi berikutnya, dock bersembunyi saat scroll turun dan kembali saat scroll naik; pill aktif muncul singkat tanpa animasi gerak yang berat. Efek mengikuti preferensi reduced motion.
+- Setelah Arya mengirim `nafbar contoh.png` (berkas lokal, tidak ikut repo), navbar diubah menjadi dock transparan di tengah dengan badge AK, enam tujuan navigasi, pill biru untuk section aktif, serta menu ponsel bernomor yang dapat ditutup dengan Escape. Sesuai revisi berikutnya, dock bersembunyi saat scroll turun dan kembali saat scroll naik; pill aktif muncul singkat tanpa animasi gerak yang berat. Efek mengikuti preferensi reduced motion.
 - Latar Pengalaman memakai [SVG kontur statis](../public/journey-contours.svg) dengan garis samar di tepi, terinspirasi screenshot Eka dan prinsip latar ringan dari [contour-field](https://github.com/AlexGordienko/contour-field). Tidak ada paket atau animasi latar tambahan.
 - Build dan lint berhasil. Navigasi baru terdeteksi pada preview lokal. Pemeriksaan browser berikutnya memperlihatkan dock hilang saat scroll turun dan muncul lagi saat scroll naik. Uji keyboard, lebar 320 px, dan penilaian estetika akhir masih menunggu review pemilik.
 
 ## Checkpoint terakhir: Hero, foto, dan navbar
 
-- Foto Hero diganti ke [`Young Man in Black Utility Jacket.png`](../Young%20Man%20in%20Black%20Utility%20Jacket.png). Salinan yang dipakai situs adalah [`public/arya-cutout.png`](../public/arya-cutout.png), dirujuk melalui `avatarUrl` di `src/data/resume.tsx`. Foto asli di `my poto dll/arya.png` tetap ada, tetapi tidak dipakai Hero. Salinan lama `public/arya.png` sudah dihapus.
+- Foto Hero diganti dari sumber lokal `Young Man in Black Utility Jacket.png` (tidak ikut repo). Aset yang dipakai situs adalah [`public/arya-cutout.png`](../public/arya-cutout.png), dirujuk melalui `avatarUrl` di `src/data/resume.tsx`. Foto asli di `my poto dll/arya.png` tetap lokal dan tidak dipakai Hero. Salinan lama `public/arya.png` sudah dihapus.
 - Hero di `src/app/page.tsx` kini menyusun judul di kiri, foto di tengah, dan deskripsi beserta tombol Projects di kanan pada desktop. Tombol About berada di bawah judul. Pada layar sempit, konten tersusun satu kolom. `src/components/scroll-portrait.tsx` tetap mengatur foto yang merespons scroll dan pointer dengan penanganan reduced motion.
-- Foto tidak lagi memakai bingkai penuh; `src/app/globals.css` menampilkan potongan transparan dengan fade di bagian bawah. Inspeksi browser pertama menunjukkan foto tengah masih terlalu kecil dan deskripsi kanan terlalu rendah. Perubahan CSS paling akhir mengatur perataan Hero ke atas dan memperbesar foto dengan `scale(1.3)`. **Perubahan CSS terakhir ini belum dibangun ulang atau diperiksa lagi secara visual.**
+- Foto tidak lagi memakai bingkai penuh; `src/app/globals.css` menampilkan potongan transparan dengan fade di bagian bawah. Inspeksi browser pertama menunjukkan foto tengah masih terlalu kecil dan deskripsi kanan terlalu rendah. Perubahan CSS paling akhir mengatur perataan Hero ke atas dan memperbesar foto dengan `scale(1.3)`. **Tampilan setelah perubahan ini belum diperiksa lagi secara visual.**
 - Navbar di `src/components/navbar.tsx` telah diperiksa di browser: saat scroll turun ke Experience, dock tersembunyi; saat scroll naik menuju About, dock muncul kembali. Enam tujuan navigasi, penanda section aktif, menu ponsel, dan dukungan reduced motion sudah ada. Pemeriksaan lebar 320 px dan navigasi keyboard belum selesai.
-- Sebelum perubahan CSS terakhir, `npm run build`, lint terarah, dan `git diff --check` berhasil; pemeriksaan diff hanya memberi peringatan akhir baris LF/CRLF. Preview lokal sebelumnya merespons di `http://localhost:3000`, jika server pengembangan masih berjalan.
+- Sebelum perubahan CSS terakhir, build berhasil. Hasil pemeriksaan terbaru dan kendala build ada pada bagian **Mulai dari sini saat melanjutkan** di atas.
 
-**Saat melanjutkan:** buka folder `C:\File Arya\porto gwww\portfolio`, jalankan `npm run dev` bila preview tidak aktif, lalu lihat Hero desktop dan ponsel setelah pembesaran foto. Periksa potongan foto, jarak teks kanan, lebar 320 px, keyboard, dan `npm run build`. Revisi visual hanya setelah Arya memberi masukan; jangan mulai section berikutnya otomatis.
+**Preview lokal:** buka folder `C:\File Arya\porto gwww\portfolio` dan jalankan `npm run dev` bila server belum aktif. Pemeriksaan browser otomatis pada 20 November tidak tersedia karena alat kontrol browser gagal tersambung.

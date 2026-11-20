@@ -1,6 +1,12 @@
 # Portofolio Arya Kharisudin Irfani
 
-Portofolio pribadi Arya, mahasiswa Teknik Informatika UIN Maulana Malik Ibrahim Malang yang berfokus pada Blue Team, Linux, dan Python. Proyek ini masih dikembangkan **bertahap**; [PRD dan catatan keputusan](./docs/PRD.md) menjadi acuan sebelum mengerjakan bagian berikutnya.
+Website portofolio pribadi Arya, mahasiswa Teknik Informatika UIN Maulana Malik Ibrahim Malang yang berfokus pada Blue Team, Linux, dan Python. Situs ini memperkenalkan latar belakang Arya, pengalaman organisasi, keahlian, proyek, dan sertifikat dalam satu halaman agar pengunjung mudah mengenal karya serta menghubunginya.
+
+Pengunjung memulai dari perkenalan singkat, lalu dapat menelusuri riwayat pendidikan dan pengalaman, melihat proyek serta sertifikat, dan membuka profil LinkedIn atau GitHub melalui bagian kontak. Navigasi di bagian atas menyediakan jalan pintas ke setiap bagian. Konten proyek dan kredensial masih dikurasi; [PRD dan catatan keputusan](./docs/PRD.md) mencatat sumber data serta pekerjaan berikutnya.
+
+## Teknologi
+
+Situs dibuat dengan **Next.js 16**, **React 19**, **TypeScript**, dan **Tailwind CSS 4**. Data profil disimpan di `src/data/resume.tsx`, sehingga perubahan konten tidak memerlukan database. Animasi potret mengikuti posisi scroll pada desktop dan menyesuaikan pengaturan *reduced motion* pengguna.
 
 ## Yang sudah ada
 
